@@ -1,14 +1,16 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 function Product({ product }) {
   return (
     <div className="product">
-      <div>
-        <img src={product.image} alt="" />
-      </div>
-      <div>
-        <p>{product.title}</p>
-      </div>
+      <Link to={`/product/${product.id}`}>
+        <div>
+          <img src={product.image} alt="" />
+        </div>
+        <div>
+          <p>{product.title}</p>
+        </div>
+      </Link>
     </div>
   );
 }

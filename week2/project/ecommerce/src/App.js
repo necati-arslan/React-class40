@@ -5,12 +5,12 @@ import "./App.css";
 import Categories from "./components/Categories";
 import Header from "./components/Header";
 import Products from "./components/Products";
+import ProductDeail from "./components/ProductDeail";
 
 function App() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [selectedCat, setSelectedCat] = useState([]);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const getCats = async () => {
@@ -25,9 +25,7 @@ function App() {
       const allProducts = await fetchProducts();
       setProducts(allProducts);
     };
-    setLoading(true);
     getProducts();
-    setLoading(false);
   }, []);
 
   const fetchCat = async () => {
@@ -57,10 +55,8 @@ function App() {
 
   const getProductsByCat = async (category) => {
     const productsByCat = await fetchProductsByCat(category);
-    setLoading(true);
     setProducts(productsByCat);
     setSelectedCat(category);
-    setLoading(false);
   };
 
   return (
@@ -72,9 +68,21 @@ function App() {
           categories={categories}
           selectedCat={selectedCat}
         />
-        {loading ? <p>Loading..</p> : <p></p>}
-
-        <Products products={products} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                {products.length > 0 ? (
+                  <Products products={products} />
+                ) : (
+                  "Loading....."
+                )}
+              </>
+            }
+          />
+          <Route path="/product/:id" element={<ProductDeail />} />
+        </Routes>
       </div>
     </Router>
   );

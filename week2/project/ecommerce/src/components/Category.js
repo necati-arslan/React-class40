@@ -1,13 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Category({ category, getProductsByCat, selectedCat }) {
   return (
-    <div
-      className={`category ${selectedCat === category && "activeCat"}`}
-      onClick={() => getProductsByCat(category)}
-    >
-      {category}
-    </div>
+    <Link to={"/"}>
+      <div
+        className={`category ${selectedCat === category && "activeCat"}`}
+        onClick={() => getProductsByCat(category)}
+      >
+        {category}
+      </div>
+    </Link>
   );
 }
 
