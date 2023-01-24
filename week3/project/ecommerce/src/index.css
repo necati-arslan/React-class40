@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  height: 100vh;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  padding: 40px 0px;
+}
+
+.headerMenu {
+  justify-content: space-between;
+}
+
+.headerMenu a {
+  margin-right: 20px;
+  font-size: 1.4rem;
+}
+
+.categories {
+  justify-content: space-between;
+}
+
+.category {
+  border: 1px solid black;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.category:hover {
+  color: white;
+  background-color: black;
+}
+
+.activeCat {
+  color: white;
+  background-color: black;
+}
+
+.products {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.product {
+  width: calc(33% - 16px);
+  position: relative;
+}
+.product img {
+  margin-bottom: auto;
+  margin-top: auto;
+  max-height: 300px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.product p {
+  text-align: center;
+}
+
+.product .iconHeart {
+  width: 30px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .product {
+    width: calc(50% - 16px);
+  }
+}
+
+@media (max-width: 600px) {
+  .product {
+    width: calc(100%);
+  }
+}
