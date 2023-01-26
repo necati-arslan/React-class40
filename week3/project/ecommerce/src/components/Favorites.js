@@ -5,7 +5,17 @@ import { useFavorite } from "../Context/FavoriteContext";
 function Favorites({ products }) {
   const { favorite } = useFavorite();
 
-  console.log(favorite);
+  console.log(typeof products);
+  console.log(products);
+
+  if (products === null) {
+    console.log("empty");
+  }
+
+  // products.array.forEach((element) => {
+  //   console.log(element);
+  // });
+
   return (
     <div className="flex products">
       {products.map(

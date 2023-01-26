@@ -7,7 +7,6 @@ export const FavoritProvider = (props) => {
   const [favorite, setFavorite] = useState([1, 2]);
 
   function isFavorite(id) {
-    console.log(id);
     return favorite.includes(id);
   }
 

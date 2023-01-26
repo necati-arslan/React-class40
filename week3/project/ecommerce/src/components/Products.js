@@ -1,6 +1,7 @@
 import Product from "./Product";
 
 function Products({ products }) {
+  console.log(products);
   return (
     <div className="flex products">
       {products.map((product, index) => (

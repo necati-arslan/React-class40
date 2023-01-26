@@ -33,7 +33,6 @@ function App() {
   const fetchCat = async () => {
     const res = await fetch("https://fakestoreapi.com/products/categories");
     const data = await res.json();
-    console.log(data);
 
     return data;
   };
@@ -41,7 +40,6 @@ function App() {
   const fetchProducts = async () => {
     const res = await fetch("https://fakestoreapi.com/products");
     const data = await res.json();
-    console.log(data);
 
     return data;
   };
